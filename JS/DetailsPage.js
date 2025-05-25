@@ -45,7 +45,7 @@ async function renderHTML(){
 
       <div class="nav-wrapper left-nav">
         <a href="DetailsPage.html?search=${search-1}" class="navigation-button">
-          <img decoding="async" src="/compressor/arrow-left-3099.svg">
+          <img decoding="async" src="compressor/arrow-left-3099.svg">
           <span style="color: black;">${formatID(pokemon.id-1)}<span> <br>
          <span class="nav-name">${pokemons[2]}</span>
         </a>
@@ -56,7 +56,7 @@ async function renderHTML(){
         <a href="pokedex.html">
           <div class="button-wrapper">
             <div class="pokedex-button">
-              <img decoding="async" src="/compressor/left-arrow-svgrepo-com.svg">
+              <img decoding="async" src="compressor/left-arrow-svgrepo-com.svg">
               Back to Pokedex
             </div>
           </div>
@@ -89,14 +89,14 @@ async function renderHTML(){
             ${ evolutionHTML[0]}
 
              <div class="arrow-wrapper arrow-1">
-              <img decoding="async" src="/compressor/arrow-icon.webp">
+              <img decoding="async" src="compressor/arrow-icon.webp">
               <span></span>
              </div>
 
             ${ evolutionHTML[1] || ''}
 
             <div class="arrow-wrapper arrow-2">
-              <img decoding="async" src="/compressor/arrow-icon.webp">
+              <img decoding="async" src="compressor/arrow-icon.webp">
               <span></span>
              </div>
 
@@ -265,7 +265,7 @@ async function renderHTML(){
 
       <div class="nav-wrapper right-nav">
         <a href="DetailsPage.html?search=${search-(-1)}" class="navigation-button">
-         <span style="color:black;">${formatID(pokemon.id+1)}</span>  <img decoding="async" src="/compressor/arrow-right.svg">
+         <span style="color:black;">${formatID(pokemon.id+1)}</span>  <img decoding="async" src="compressor/arrow-right.svg">
          <br>
          <span class="nav-name">${pokemons[1]}</span>
         </a>
@@ -438,19 +438,19 @@ async function getStats(pokemon){
 async function getGender(){
   const species = await fetchItem(`https://pokeapi.co/api/v2/pokemon-species/${search}/`);
   if(species.gender_rate === 0){
-    return `<img decoding="async" class="male-icon" src="/compressor/male-49 (1).svg"></img>`
+    return `<img decoding="async" class="male-icon" src="compressor/male-49 (1).svg"></img>`
   }
 
   if(species.gender_rate === 8){
-    return `<img decoding="async" class="female-icon" src="/compressor/female-19 (1).svg">`
+    return `<img decoding="async" class="female-icon" src="compressor/female-19 (1).svg">`
   }
 
   if(species.gender_rate === -1){
     return 'Genderless'
   }
 
-  return `<img decoding="async" class="male-icon" src="/compressor/male-49 (1).svg">
-          <img decoding="async" class="female-icon" src="/compressor/female-19 (1).svg">`
+  return `<img decoding="async" class="male-icon" src="compressor/male-49 (1).svg">
+          <img decoding="async" class="female-icon" src="compressor/female-19 (1).svg">`
 }
 
 async function getMultipliers(types){
