@@ -1,0 +1,429 @@
+:root {
+  /* colors for the pokemon card divs */
+  --normal: #A8A77A;
+	--fire: #EE8130;
+	--water: #6390F0;
+	--electric: #F7D02C;
+	--grass: #7AC74C;
+	--ice: #96D9D6;
+	--fighting: #C22E28;
+	--poison: #A33EA1;
+	--ground: #E2BF65;
+	--flying: #A98FF3;
+	--psychic: #F95587;
+	--bug: #A6B91A;
+	--rock: #B6A136;
+	--ghost: #735797;
+	--dragon: #6F35FC;
+	--dark: #705746;
+	--steel: #B7B7CE;
+	--fairy: #D685AD;
+
+  /* colors for the pokemon ID divs */
+  --normal2: #7F7F4F;
+  --fire2: #9B5A1F;
+  --water2: #4E72B5;
+  --electric2: #C7A905;
+  --grass2: rgb(5, 116, 5);
+  --ice2: #6BB2B2;
+  --fighting2: #9F2320;
+  --poison2: #832F82;
+  --ground2: #B38A40;
+  --flying2: #7A78B9;
+  --psychic2: #D64C70;
+  --bug2: #7B8C19;
+  --rock2: #8F6B2B;
+  --ghost2: #5A3F6A;
+  --dragon2: #5B2BC1;
+  --dark2: #4E4437;
+  --steel2: #8F8F9E;
+  --fairy2: #A76F8D;
+
+  --basic-fs: 1.5rem;
+
+  /* light mode: */
+  --base: rgb(225 232 245/ 90%);
+  --text: rgb(49, 49, 53);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/montserrat-v29-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: bold;
+  font-weight: 700;
+  src: url('../fonts/montserrat-v29-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+.hide {
+  display: none !important; 
+}
+
+.show {
+  display: block !important;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+body {
+  background-color: var();
+  background-image: url("/compressor/rotated-pokeball.webp");
+  background-repeat: no-repeat;
+  background-position: 65rem 5rem;
+  border-radius: 1rem;
+  padding: 5px 0;
+}
+
+.pokedex-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  background-color: var(--base);
+  width: 99.5%;
+  border-radius: 1rem;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+/* Navigation buttons */
+.nav-wrapper {
+  font-size: var(--basic-fs);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+a:link {
+  color: gray;
+  text-decoration: none;
+}
+
+a:visited {
+  color: gray;
+  text-decoration: none;
+}
+
+.navigation-button > img {
+  width: 1rem;
+}
+
+.nav-name {
+  color: gray;
+}
+
+.left-nav {
+  position: absolute;
+   left: 20px;
+}
+
+.right-nav {
+  position: absolute;
+   right: 20px;
+}
+
+/* First column CSS*/
+.column-1 {
+  display: flex;
+  flex-direction: column;
+  background-color: var();
+  margin-right: 35px;
+}
+
+.button-wrapper {
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.pokedex-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  background-color: transparent;
+  border: none;
+  font-size: var(--basic-fs);
+  cursor: pointer;
+}
+
+.pokedex-button > img {
+  width: 2rem;
+  margin-right: 8px;
+}
+
+.name-wrapper {
+  max-width: 16rem;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.pokemon-Id {
+  color: grey;
+}
+
+.type-container {
+  display: flex;
+}
+
+.type-container > img {
+  height: 2em;
+  margin-right: 12px;
+}
+
+.pokemon-wrapper {
+  margin-bottom: 10px;
+  width: 29.6875rem;
+}
+
+.pokemon-wrapper > img {
+  max-width: 100%;
+}
+
+/* Evolution chart css */
+.Evolution-chart {
+  display: flex;
+  flex-direction: column;
+}
+
+.Evolution-chart::before {
+  content: attr(class);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.evolution-line-wrapper {
+  display: flex;
+}
+
+.evolve-wrapper {
+  width: 5em;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.evolve-wrapper > img {
+  width: 4em;
+  margin-bottom: 7px;
+}
+
+.arrow-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5em;
+}
+
+.arrow-wrapper > img {
+  width: 2.4em;
+}
+
+.arrow-wrapper > span {
+  width: 80px;
+}
+
+.evolve-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+} 
+
+.pkmn-type-img > img {
+  width: 1.5em;
+  margin-top: 7px;
+}
+
+.pkmn-type-img {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 4em;
+}
+
+/* Second column CSS */
+
+.column-2 {
+  display: flex;
+  flex-direction: column;
+  background-color: var();
+}
+
+.about-header {
+  margin: 16px 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 2px var(--grass);
+  /* text-decoration: underline;
+  text-decoration-color: var(--grass); */
+}
+
+.effectiveness-wrapper {
+  display: flex;
+  display: row;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.weaknesses-wrapper, .resistances-wrapper {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.weaknesses-wrapper > span, .resistances-wrapper > span {
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+}
+
+.weaknesses-img-wrapper, .resistances-img-wrapper {
+  display: flex;
+  max-width: 18rem;
+  flex-wrap: wrap;
+}
+
+.weaknesses-img-wrapper > img, .resistances-img-wrapper > img {
+  width: 1.5em;
+  margin-right: 12px;
+  margin-bottom: 7px;
+}
+
+.story-wrapper {
+  max-width: 45rem;
+  margin-bottom: 10px;
+}
+
+.pokemon-story {
+  font-size: var(--basic-fs);
+}
+
+table {
+  border-collapse: collapse;
+  font-size: var(--basic-fs);
+}
+
+th,td {
+  border-bottom: 1px solid grey;
+  padding: 4px 10px;
+}
+
+th {
+  color: grey;
+}
+
+th {
+  text-align: left;
+}
+
+.male-icon, .female-icon {
+  width: 3rem;
+  margin-right: 25px;
+}
+
+.male-icon {
+  filter: invert(78%) sepia(67%) saturate(3909%) hue-rotate(145deg) brightness(100%) contrast(101%);
+}
+
+.female-icon {
+  filter: invert(18%) sepia(98%) saturate(3617%) hue-rotate(300deg) brightness(101%) contrast(118%);
+}
+
+.vitals-div {
+  margin-bottom: 12px;
+}
+
+.stat-barchart {
+  width: 80%;
+}
+
+.barchat-bar {
+  /* background-color: orange;
+  width: 25.00%; */
+  height: 0.75rem;
+}
+
+/*Loading page css*/
+
+.loading-div {
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #282b30;
+  position: fixed;
+    top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media Queries */
+@media ( width < 1653px){
+  .pokemon-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (width < 1439px){
+  .nav-wrapper {
+    top: 500px;
+  }
+}
+
+/* @media (width < 903px){
+  .pokemon-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+} */
+
+@media (width < 736px){
+  .column-2 {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (width < 710px){
+  .column-2 {
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3, .Evolution-chart::before {
+    font-size: 1.2rem;
+  }
+
+  :root {
+    --basic-fs: 1rem;
+  }
+}

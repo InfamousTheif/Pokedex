@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pokedex</title>
+    <meta charset = "UTF-8">
+    <meta name = "description" content = "Pokedex">
+    <meta name = "author" content = "Inquntum">
+    <meta name = "keywords" content= "pokedex, pokemon">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <link rel = "icon" href="compressor/Pok├⌐_Ball_icon.svg.webp" type="image/icon-type">
+    <link rel = "stylesheet" href="./CSS/pokedex.css">
+    <link rel="preload" as="image" href="compressor/Pok├⌐_Ball_icon.svg.webp">
+  </head>
+  <body>
+
+    <div class = "header" id="topOfPage">
+
+      <div class="logo rand-pkmn">
+        <img class="pokeball-img" src="compressor/Pok├⌐_Ball_icon.svg.webp">
+        <!-- <span class="refresh-page-text js-refresh-page">Refresh Page</span> -->
+      </div>
+
+      <div class="search-box">
+        <input class="pokedex-search js-search" type = "text" placeholder="Search">
+        <button class="search-button js-search-button light-icon"><img src = "compressor/search-icon.webp"></button>
+        <button class="search-button js-search-button dark-icon"><img src = "compressor/search-icon(white).webp"></button>
+      </div>
+
+      <div class="dark-mode theme-div"
+          aria-label="light-theme">
+        <button id="theme-button" >
+          <img class="light-img" src="/compressor/light-icon.webp">
+          <img class="dark-img" src="/compressor/dark-icon.webp">
+        </button>
+      </div>
+
+    </div>
+
+    
+      <div class="region-wrapper">
+
+        <div class="region-form">
+            <label for="regions">Select a Pokemon reigon:</label>
+            <select name="regions-list" id="regions">
+              <option value="kanto">Kanto</option>
+              <option value="johto">Johto</option>
+              <option value="hoenn">Hoenn</option>
+              <option value="sinnoh">Sinnoh</option>
+              <option value="unova">Unova</option>
+              <option value="kalos">Kalos</option>
+              <option value="alola">Alola</option>
+              <option value="galar">Galar</option>
+              <option value="paldea">Paldea</option>
+            </select>
+        </div>
+
+      </div>
+    
+
+      <div class="pokemon-container js-pokemon-container">
+
+            
+  
+      </div>
+
+      <div>
+        <a href="#topOfPage">
+          <button class="backToTop">
+            <img src="/compressor/up-arrow-svgrepo-com.svg">
+          </button>
+        </a>
+      </div>
+  
+      <script type="module" src="./JS/pokedex.js" defer></script>
+  </body>
+</html>

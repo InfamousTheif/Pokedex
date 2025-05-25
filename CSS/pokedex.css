@@ -1,0 +1,371 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+}
+
+:root {
+  /* colors for the pokemon card divs */
+  --normal: #A8A77A;
+	--fire: #EE8130;
+	--water: #6390F0;
+	--electric: #F7D02C;
+	--grass: #7AC74C;
+	--ice: #96D9D6;
+	--fighting: #C22E28;
+	--poison: #A33EA1;
+	--ground: #E2BF65;
+	--flying: #A98FF3;
+	--psychic: #F95587;
+	--bug: #A6B91A;
+	--rock: #B6A136;
+	--ghost: #735797;
+	--dragon: #6F35FC;
+	--dark: #705746;
+	--steel: #B7B7CE;
+	--fairy: #D685AD;
+
+  /* colors for the pokemon ID divs */
+  --normal2: #7F7F4F;
+  --fire2: #9B5A1F;
+  --water2: #4E72B5;
+  --electric2: #C7A905;
+  --grass2: rgb(5, 116, 5);
+  --ice2: #6BB2B2;
+  --fighting2: #9F2320;
+  --poison2: #832F82;
+  --ground2: #B38A40;
+  --flying2: #7A78B9;
+  --psychic2: #D64C70;
+  --bug2: #7B8C19;
+  --rock2: #8F6B2B;
+  --ghost2: #5A3F6A;
+  --dragon2: #5B2BC1;
+  --dark2: #4E4437;
+  --steel2: #8F8F9E;
+  --fairy2: #A76F8D;
+
+  /* light mode: */
+  --base: #f6f8fc;
+  --text: rgb(49, 49, 53);
+}
+
+@media (prefers-color-scheme: dark){
+  :root {
+    --base: rgb(20, 20, 20);
+    --text: rgb(236, 236, 240);
+  }
+}
+
+html {
+  color-scheme: dark light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark-mode {
+  color-scheme: dark;
+  --base: rgb(20, 20, 20);
+  --text: rgb(236, 236, 240);
+}
+
+.light-mode {
+  color-scheme: light;
+  --base: #f6f8fc;
+  --text: rgb(49, 49, 53);
+}
+
+@font-face {
+  font-family: 'PocketMonk';
+  src: url(../fonts/Pocket\ Monk.woff2);
+}
+
+body{
+  padding-bottom: 40px;
+  margin: 0;
+  background: var(--base);
+  color: var(--text);
+}
+
+/* header */
+
+.header {
+  position: relative;
+    top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 5em;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  z-index: 100;
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo:hover { 
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+   0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+}
+
+.pokeball-img {
+  width: 3em;
+  margin-right: 0.5rem;
+}
+
+.refresh-page-text {
+  font-family: "PocketMonk",sans-serif;
+  font-size: 2em;
+}
+
+/* search bar */
+
+.search-box {
+  display: flex;
+  align-items: center;
+  max-width: 700px;
+  flex: 1;
+}
+
+.pokedex-search {
+  flex: 1;
+  padding: 0 2em;
+  height: 3em;
+  max-width: 420em;
+  border: none;
+  border-radius: 1rem;
+  font-family: 'PocketMonk', sans-serif;
+  font-size: 1.2rem;
+  box-shadow: 1px 2px 3px 0.7px rgb(109, 108, 108);
+}
+
+.pokedex-search[placeholder] {
+  line-height: 2em;
+}
+
+.search-button {
+  background-color: transparent;
+  padding: 0 1em;
+  height: 4.25em;
+  border: none;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-left: -5em;
+  cursor: pointer;
+}
+
+.search-button > img {
+  width: 3em;
+}
+
+.light-icon, .dark-icon {
+  display: none;
+}
+
+/* Theme button */
+
+.theme-div {
+  width: 5rem;
+  position: relative;
+}
+
+#theme-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.theme-div::after {
+  position: absolute;
+  content: attr(aria-label);
+  width: max-content;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin: 0 auto;
+  background-color: rgb(192, 171, 171);
+  padding: 2px 4px;
+  border-radius: 0.125rem;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top;
+  transition: transform 60ms linear ,opacity 60ms linear;
+}
+
+.theme-div:hover::after {
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+#theme-button > img {
+  height: 4em;
+}
+
+.dark-mode .dark-img {
+  display: none;
+}
+
+.light-mode .dark-img {
+  display: block;
+}
+
+.dark-mode .light-img {
+  display: block;
+}
+
+.light-mode .light-img {
+  display: none;
+}
+
+/* reigon selector */
+.region-wrapper {
+  overflow: hidden;
+  width: max-content;
+  max-width: 95%;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-family: "PocketMonk", sans-serif;
+  font-size: 1.5rem;
+}
+
+#regions {
+  font-family: "PocketMonk", sans-serif;
+  font-size: 1.3rem;
+}
+
+/* main content */
+.pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 75rem;
+}
+
+/* front of the card */
+
+.pokemon-card {
+  margin: 0.6rem;
+}
+
+.card {
+  border-radius: 0.5rem;
+  padding: 1em 0.7em;
+  max-width: 12.5rem;
+  min-width: 12.5rem;
+  max-height: 14rem;
+  min-height: 14rem;
+  position: relative;
+  box-shadow: #af9d9d 0 10px 10px;
+
+  transform-style: preserve-3d;
+  transition: all 0.35s ease;
+  perspective: 150rem;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+
+.pokemon-details-1, .pokemon-details-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 87%;
+  backface-visibility: hidden;
+}
+
+
+.pokemon-image {
+  width: 6.5rem;
+  image-rendering: pixelated;
+}
+
+.number {
+  margin-top: 0.3rem;
+  font-family: "PocketMonk", sans-serif;
+  padding: 0.25em 0.7em;
+  border-radius: 0.5rem;
+}
+
+.name {
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+  font-family: "PocketMonk", sans-serif;
+}
+
+.types {
+  display: flex;
+}
+
+.type-container {
+  margin: 0 0.25rem;
+}
+
+.type-container > img {
+  width: 2rem;
+}
+
+/* back of the card */
+
+.pokemon-details-2 {
+  transform: rotateY(180deg);
+  transition: all 0.35s ease;
+}
+
+.anthropometry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.8rem;
+  font-family: "PocketMonk",sans-serif;
+}
+
+.anthropometry > span {
+  font-size: 1.2rem;
+}
+
+/* Back to top button */
+
+.backToTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--text);
+  border: none; 
+  border-radius: 1.125rem;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  display: none;
+}
+
+.backToTop > img {
+  width: 2.125rem;
+}
+
+.show {
+  display: block;
+}
