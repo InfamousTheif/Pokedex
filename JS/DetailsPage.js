@@ -53,7 +53,7 @@ async function renderHTML(){
 
       <div class="column-1">
 
-        <a href="pokedex.html">
+        <a href="index.html">
           <div class="button-wrapper">
             <div class="pokedex-button">
               <img decoding="async" src="compressor/left-arrow-svgrepo-com.svg">
