@@ -45,7 +45,7 @@ async function renderHTML(){
 
       <div class="nav-wrapper left-nav">
         <a href="DetailsPage.html?search=${search-1}" class="navigation-button">
-          <img decoding="async" src="compressor/arrow-left-3099.svg">
+          <img decoding="async" src="./compressor/arrow-left-3099.svg">
           <span style="color: black;">${formatID(pokemon.id-1)}<span> <br>
          <span class="nav-name">${pokemons[2]}</span>
         </a>
