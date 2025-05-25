@@ -83,7 +83,7 @@ h3 {
 
 body {
   background-color: var();
-  background-image: url("/compressor/rotated-pokeball.webp");
+  background-image: url("compressor/rotated-pokeball.webp");
   background-repeat: no-repeat;
   background-position: 65rem 5rem;
   border-radius: 1rem;
