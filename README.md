@@ -3,6 +3,7 @@
 
 ## Tech Stacks
  ![HTML icon](/compressor/HTML_Icon.png)
+ 
  ![JS icon](/compressor/JS_Icon.png)
  
  ![CSS icon](/compressor/CSS_Icon.png)
